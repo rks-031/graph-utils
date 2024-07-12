@@ -99,4 +99,8 @@ vector<T> BFSUtil(T &startNode, unordered_map<T, list<T>> adjList)
     return bfsOrder;
 }
 
+// cycle detection in an undirected graph
+
+// cycle detection in a directed graph
+
 #endif
