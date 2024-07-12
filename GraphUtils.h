@@ -36,7 +36,7 @@ unordered_map<T, list<T>> createAdjListUndirected(vector<vector<T>> &edges)
 
 // printing the adjacency list
 template <typename T>
-void printAdjList(unordered_map<T, list<int>> adjList)
+void printAdjList(unordered_map<T, list<T>> &adjList)
 {
     for (auto &pair : adjList)
     {
@@ -47,6 +47,24 @@ void printAdjList(unordered_map<T, list<int>> adjList)
         }
         cout << endl;
     }
+}
+
+// depth-first traversal of the graph
+template <typename T>
+vector<int> DFSUtil(T &node, unordered_map<T, bool> &visited, unordered_map<T, list<T>> adjList)
+{
+    vector<T> dfsOrder;
+    visited[node] = true;
+    dfsOrder.push_back(node);
+
+    for (auto &nbr : adjList)
+    {
+        if (!visited[nbr])
+        {
+            DFSUtil(nbr, visited, adjList);
+        }
+    }
+    return DFSUtil;
 }
 
 #endif
