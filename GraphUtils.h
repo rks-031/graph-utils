@@ -51,7 +51,7 @@ void printAdjList(unordered_map<T, list<T>> &adjList)
 
 // depth-first traversal of the graph
 template <typename T>
-vector<int> DFSUtil(T &node, unordered_map<T, bool> &visited, unordered_map<T, list<T>> adjList)
+vector<T> DFSUtil(T &node, unordered_map<T, bool> &visited, unordered_map<T, list<T>> adjList)
 {
     vector<T> dfsOrder;
     visited[node] = true;
@@ -65,6 +65,38 @@ vector<int> DFSUtil(T &node, unordered_map<T, bool> &visited, unordered_map<T, l
         }
     }
     return DFSUtil;
+}
+
+// breadth-first traversal of the graph
+template <typename T>
+vector<T> BFSUtil(T &startNode, unordered_map<T, list<T>> adjList)
+{
+    vector<T> bfsOrder;
+    unordered_map<T, bool> visited;
+    for (auto &pair : adjList)
+    {
+        visited[pair.first] = true;
+    }
+
+    queue<T> q;
+    visited[startNode] = true;
+    q.push(startNode);
+
+    while (!q.empty())
+    {
+        T node = q.front();
+        bfsOrder.push_back(node);
+
+        for (auto &nbr : adjList[node])
+        {
+            if (!visited[nbr])
+            {
+                visited[nbr] = true;
+                q.push(nbr);
+            }
+        }
+    }
+    return bfsOrder;
 }
 
 #endif
