@@ -1,6 +1,6 @@
 ## Specific utilities for Graph (Personalized STLs)
 
-This repository contains utilites for various graph functions which are used quite often while working with problems of graphs.
+This repository contains utilities for various graph functions which are used quite often while working with problems of graphs.
 
 Some of them are as follows:
 
