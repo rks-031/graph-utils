@@ -49,3 +49,9 @@ The above utilites can be quite essential where the user has to only focus on so
    ```sh
    git merge upstream/main
    ```
+
+## Steps to Use on a Coding Platform:
+
+1. _Copy the Entire Code_: <br/>Copy the consolidated code into the coding platform's editor.
+2. _Modify the Main Function_: <br/>Adjust the main function according to the specific problem you are solving on the platform.
+3. _Run and Submit_: <br/>Use the platform’s run and submit options to test and submit your solution.
