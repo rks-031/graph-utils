@@ -3,7 +3,7 @@
 #include "traversals.h"
 #include "graphCycle.h"
 #include "connected.h"
-// #include "shortestPath.h"
+#include "shortestPath.h"
 using namespace std;
 
 int main()
@@ -41,6 +41,19 @@ int main()
         cout << "The directed graph contains a cycle" << endl;
     else
         cout << "The directed graph does not contain a cycle" << endl;
+
+    unordered_map<int, list<pair<int, int>>> weightedEdges = {
+        {0, {{1, 4}, {2, 1}}},
+        {1, {{3, 1}}},
+        {2, {{1, 2}, {3, 5}}},
+        {3, {}}};
+
+    unordered_map<int, int> previousNodes = dijkstra(weightedEdges, 0);
+    cout << "Dijkstra's Algorithm: Shortest paths from node 0:" << endl;
+    for (const auto &pair : previousNodes)
+    {
+        cout << "Node " << pair.first << " is reached from " << pair.second << endl;
+    }
 
     return 0;
 }
