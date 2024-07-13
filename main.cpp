@@ -2,7 +2,6 @@
 #include "createAdjacency.h"
 #include "traversals.h"
 #include "graphCycle.h"
-#include "connected.h"
 #include "shortestPath.h"
 using namespace std;
 
