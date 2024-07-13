@@ -45,4 +45,4 @@ unordered_map<T, T> dijkstra(unordered_map<T, list<pair<T, int>>> &adjList, T st
     return previous;
 }
 
-#endif // SHORTEST_PATH_H
+#endif
