@@ -113,4 +113,39 @@ vector<T> BFSUtil(T startNode, unordered_map<T, list<T>> &adjList)
     return bfsOrder;
 }
 
+// cycle detection in an undirected graph
+template <typename T>
+bool dfsUnorderedCycle(T node, vector<bool> &vis, unordered_map<T, list<T>> adjList, T parent)
+{
+    vis[node] = true;
+
+    for (auto &nbr : adjList[node])
+    {
+        if (!vis[nbr])
+        {
+            if (dfsUnorderedCycle(nbr, vis, adjList, node))
+                return true;
+        }
+        else if (nbr != parent)
+            return true;
+    }
+    return false;
+}
+
+template <typename T>
+bool isCycleUndirected(unordered_map<T, list<T>> adjList)
+{
+    T V = adjList.size();
+    vector<bool> vis(V, false);
+    for (T i = 0; i < V; i++)
+    {
+        if (!vis[i])
+        {
+            if (dfsUnorderedCycle(i, vis, adjList, -1))
+                return true;
+        }
+    }
+    return true;
+}
+
 #endif

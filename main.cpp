@@ -8,7 +8,7 @@ int main()
     unordered_map<int, list<int>> adjListDirected = createAdjListDirected(edges);
     unordered_map<int, list<int>> adjListUndirected = createAdjListUndirected(edges);
 
-    cout << "Directed Graph Adjacency List:" << endl;
+    /*cout << "Directed Graph Adjacency List:" << endl;
     printAdjList(adjListDirected);
 
     cout << "Undirected Graph Adjacency List:" << endl;
@@ -29,6 +29,12 @@ int main()
         cout << node << " ";
     }
     cout << endl;
-
+    */
+    cout << "Checking if the undirected graph contains a cycle:" << endl;
+    bool isCycle = isCycleUndirected(adjListUndirected);
+    if (isCycle)
+        cout << "The undirected graph contains a cycle";
+    else
+        cout << "The undirected graph does not contain a cycle";
     return 0;
 }
