@@ -4,12 +4,12 @@ This repository contains utilities for various graph functions which are used qu
 
 Some of them are as follows:
 
-1. Creation of adjacency list from the egdes of a directed or undirected graph
+1. Creation of adjacency list from the edges of a directed or undirected graph
 2. Checking whether a graph contains a cycle or not
 3. Finding the shortest path starting from a particular node
 4. Finding the breadth and depth first traversals of a graph
 
-We just have to define the pre-processor directives in our working file and we'll be able to implement the above mentioned utilies by just invoking them.
+We just have to define the pre-processor directives in our working file and we'll be able to implement the above mentioned utilities by just invoking them.
 
 Here's a demo of how to implement the above:
 ![header files](image.png)
