@@ -148,4 +148,47 @@ bool isCycleUndirected(unordered_map<T, list<T>> adjList)
     return true;
 }
 
+// cycle detection in a directed graph
+template <typename T>
+bool isCycleDirected(unordered_map<T, list<T>> adjList)
+{
+    T V = adjList.size();
+    vector<T> indegree(V);
+
+    for (T i = 0; i < V; i++)
+    {
+        for (auto nbr : adjList[i])
+        {
+            indegree[nbr]++;
+        }
+    }
+
+    stack<T> s;
+
+    for (T i = 0; i < V; i++)
+    {
+        if (indegree[i] == 0)
+            s.push(i);
+    }
+
+    T count = 0;
+
+    while (!s.empty())
+    {
+        T top = s.top();
+        s.pop();
+
+        count++;
+
+        for (auto &nbr : adjList[top])
+        {
+            indegree[nbr]--;
+
+            if (indegree[nbr] == 0)
+                s.push(nbr);
+        }
+    }
+    return count != V;
+}
+
 #endif
