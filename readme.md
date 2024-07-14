@@ -12,9 +12,9 @@ Some of them are as follows:
 We just have to define the pre-processor directives in our working file and we'll be able to implement the above mentioned utilities by just invoking them.
 
 Here's a demo of how to implement the above:
-[header files](src/image.png)
+![header files](src/image.png)
 
-[adjacency lists and traversals](src/image-1.png)
+![adjacency lists and traversals](src/image-1.png)
 
 ![cycle detection and shortest path](src/image-2.png)
 
