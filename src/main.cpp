@@ -11,7 +11,7 @@ int main()
     unordered_map<int, list<int>> adjListDirected = createAdjListDirected(edges);
     unordered_map<int, list<int>> adjListUndirected = createAdjListUndirected(edges);
 
-    cout << "DFS Traversal starting from node 2 in directed graph:" << endl;
+    cout << "Traversal starting from node 2 in directed graph:" << endl;
     vector<int> dfsOrder = DFS(adjListDirected, 2);
     for (int node : dfsOrder)
     {
